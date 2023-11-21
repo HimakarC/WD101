@@ -2,7 +2,7 @@ let userForm = document.getElementById('user');
 let l = [];
 const R = () =>
 {
-    let entry = JSON.parse(localStorage.getItem(‘l’)) || [];
+    let entry = JSON.parse(localStorage.getItem('l)) || [];
     return entry;
 }
 
@@ -35,7 +35,7 @@ hbc.addEventListener("change", () =>
 
     if ((today.getDate() < birthdate.getDate()) || month_Diff < 0)
     {	        
-	ananya—;
+	ananya--;
     }
     if (ananya < 18 || ananya > 55)
     {
@@ -62,7 +62,7 @@ const sreenidhi = (runanya) =>
     };
     l = R();
     l.push(input);
-    localStorage.setItem(“l”, JSON.stringify(l));
+    localStorage.setItem('l', JSON.stringify(l));
     D();
     userForm.reset();
     }
