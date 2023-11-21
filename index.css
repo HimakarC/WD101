@@ -4,7 +4,7 @@ body,h1,h2,p,ul,li,form,button {
     padding: 0;
 }
 
-.box {
+.bhavana {
     margin-top: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -45,7 +45,7 @@ body {
   padding: 0;
 }
 
-.hip {
+.himakar {
   max-width: 315px;
   margin: 20px auto;
   background-color: #fff;
@@ -54,7 +54,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.pqr {
+.chappidi {
   text-align: center;
   color: #333;
 }
@@ -67,11 +67,11 @@ body {
     box-sizing: border-box; 
 }
 
-.dv {
+.ananya {
   margin-bottom: 8px;
 }
 
-.lb {
+.love {
   font-weight: bold;
   color: #333;
 }
@@ -84,11 +84,11 @@ input {
   box-sizing: border-box;
 }
 
-.box2 {
+.both2 {
   margin-top: 40px;
 }
 
-.hi {
+.ok {
   max-width: 700px;
   margin: 20px auto;
   background-color: #fff;
@@ -97,24 +97,21 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.psa {
+.hbc {
   text-align: center;
   color: #333;
 }
 
-.bv {
+.bhavana {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.th,.td {
+.runanya {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-}
-
-.th {
   background-color: #4caf50;
   color: #fff;
 }
