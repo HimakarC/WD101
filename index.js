@@ -9,7 +9,7 @@ const R = () =>
 const display = () => 
 {
     let entry = R();
-    const TE = entry.map((input) => 
+    const tE = entry.map((input) => 
     {
         const ND = `<td class='th'>${input.FullName}</td>`;
         const ED = `<td class='th'>${input.email}</td>`;
@@ -20,7 +20,7 @@ const display = () =>
         return r;
     }).join('\n');
     const TB = document.querySelector('#user-table tbody');
-    TB.innerHTML = TE;
+    TB.innerHTML = tE;
 }
 const hbc = document.getElementById("dob");
 hbc.addEventListener("change", () =>
