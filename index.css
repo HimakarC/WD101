@@ -4,7 +4,7 @@ body,h1,h2,p,ul,li,form,button {
     padding: 0;
 }
 
-.both {
+.box {
     margin-top: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -31,6 +31,7 @@ body,h1,h2,p,ul,li,form,button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
 #submit:hover {
@@ -44,7 +45,7 @@ body {
   padding: 0;
 }
 
-.himakar {
+.hip {
   max-width: 315px;
   margin: 20px auto;
   background-color: #fff;
@@ -53,20 +54,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.chappidi {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  background-color: #4caf50;
-  color: #fff;
-}
-
-.penumetcha {
-  text-align: center;
-  color: #333;
-}
-
-.Bhavana {
+.pqr {
   text-align: center;
   color: #333;
 }
@@ -79,8 +67,11 @@ body {
     box-sizing: border-box; 
 }
 
+.dv {
+  margin-bottom: 8px;
+}
 
-.ok {
+.lb {
   font-weight: bold;
   color: #333;
 }
@@ -93,15 +84,11 @@ input {
   box-sizing: border-box;
 }
 
-.Ananya {
+.box2 {
   margin-top: 40px;
 }
 
-.deva {
-  margin-bottom: 8px;
-}
-
-.Runanya {
+.hi {
   max-width: 700px;
   margin: 20px auto;
   background-color: #fff;
@@ -110,8 +97,24 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.birth {
+.psa {
+  text-align: center;
+  color: #333;
+}
+
+.bv {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+}
+
+.th,.td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.th {
+  background-color: #4caf50;
+  color: #fff;
 }
