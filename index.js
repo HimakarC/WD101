@@ -1,72 +1,66 @@
 let userForm=document.getElementById('user');
-let l = [];
-const R = () => 
-{
-    let entry = JSON.parse(localStorage.getItem('l')) || [];
+let arr=[];
+const ret=()=>{
+    let entry=JSON.parse(localStorage.getItem('arr'))||[];
     return entry;
 }
 
-const display = () => 
-{
-    let entry = R();
-    const tE = entry.map((input) => 
-    {
-        const ND = `<td class='th'>${input.FullName}</td>`;
-        const ED = `<td class='th'>${input.email}</td>`;
-        const PD = `<td class='th'>${input.password}</td>`;
-        const DOB = `<td class='th'>${input.dob}</td>`;
-        const terms = `<td class='th'>${input.terms}</td>`;
-        const r = `<tr>${ND} ${ED} ${PD} ${DOB} ${terms}</tr>`;
-        return r;
+const dis=()=>{
+    let entry=ret();
+    const tE=entry.map((input)=>{
+        const namedata=`<td class='th'>${input.FullName}</td>`;
+        const emaildata=`<td class='th'>${input.email}</td>`;
+        const passworddata=`<td class='th'>${input.password}</td>`;
+        const dobdata=`<td class='th'>${input.dob}</td>`;
+        const termsdata=`<td class='th'>${input.terms}</td>`;
+        const row=`<tr>${namedata} ${emaildata} ${passworddata} ${dobdata} ${termsdata}</tr>`;
+        return row;
     }).join('\n');
-    const TB = document.querySelector('#user-table tbody');
-    TB.innerHTML = tE;
+    const tabBody=document.querySelector('#user-table tbody');
+    tabBody.innerHTML=tE;
 }
-const hbc = document.getElementById("dob");
-hbc.addEventListener("change", () =>
+const abc = document.getElementById("dob");
+abc.addEventListener("change", () =>
 {
-    let L = hbc.value.split("-");
-    let BD = new Date(L[0], L[1], L[2]);
-    let TD = new Date();
-    let PY = TD.getFullYear();
-    let BY = BD.getFullYear()
-    let runanya = PY - BY;
-    let MD = TD.getMonth() - BD.getMonth();
+    let k=abc.value.split("-");
+    let birthdate = new Date(k[0],k[1],k[2]);
+    let today = new Date();
+    let present_year= today.getFullYear();
+    let birth_Year=birthdate.getFullYear()
+    let age = present_year - birth_Year;
+    let month_Diff = today.getMonth() - birthdate.getMonth();
 
-    if ((TD.getDate() < BD.getDate()) || MD < 0) 
+    if ((today.getDate() < birthdate.getDate())||month_Diff<0) 
         {
-        	runanya--;
+        age--;
         }
-    if (runanya < 18 || runanya > 55) 
+    if (age<18 || age>55) 
         {
-        	hbc.setCustomValidity("Age must be between 18 and 55");
-        	hbc.reportValidity();
-    }
-    else
-	{
-        hbc.setCustomValidity("");
+        abc.setCustomValidity("Age must be between 18 and 55");
+        abc.reportValidity();
+    }else
+        {
+        abc.setCustomValidity("");
         }
     }
 );
-const sreenidhi = (event) => 
-{
+const suf=(event)=>{
     event.preventDefault();
-    const himakar = document.getElementById('name').value
-    const chappidi = document.getElementById('email').value
-    const bhavana = document.getElementById('password').value
-    const ananya = document.getElementById('dob').value
-    const ok = document.getElementById('terms').checked
-    const input =
-    {
-        himakar, chappidi, bhavana, ananya, ok
+    const FullName = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const dob = document.getElementById('dob').value
+    const terms = document.getElementById('terms').checked
+    const input={
+        FullName,email,password,dob,terms
     };
-    l = R();
-    l.push(input);
-    localStorage.setItem("l", JSON.stringify(l));
-    display();
+    arr=ret();
+    arr.push(input);
+    localStorage.setItem("arr",JSON.stringify(arr));
+    dis();
     userForm.reset();
     }
 
 
-userForm.addEventListener('submit', sreenidhi)
-display();
+userForm.addEventListener('submit',suf)
+dis();
