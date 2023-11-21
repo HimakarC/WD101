@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh7840\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 let userForm = document.getElementById('user');\
+let l = [];\
+const R = () =>\
+\{\
+    let entry = JSON.parse(localStorage.getItem(\'91l\'92)) || [];\
+    return entry;\
+\}\
+\
+const D = () =>\
+\{\
+    let entry = R();\
+    const tE = entry.map((input) =>\
+    \{\
+        const bhavana=`<td class=\'91chappidi\'92>$\{input.FullName\}</td>`;\
+        const himakar=`<td class=\'91chappidi\'92>$\{input.email\}</td>`;\
+        const ananya=`<td class=\'91chappidi'>$\{input.password\}</td>`;\
+        const pcbh=`<td class='chappidi'>$\{input.dob\}</td>`;\
+        const hbc=`<td class='chappidi'>$\{input.terms\}</td>`;\
+        const row=`<tr>$\{bhavana\} $\{himakar\} $\{ananya\} $\{pcbh\} $\{hbc\}</tr>`;\
+        return row;\
+    \}).join('\\n');\
+    const TB=document.querySelector('#user-table tbody');\
+    TB.innerHTML=tE;\
+\}\
+const hbc = document.getElementById("dob");\
+hbc.addEventListener("change", () =>\
+\{\
+    let k = hbc.value.split("-");\
+    let birthdate = new Date(k[0],k[1],k[2]);\
+    let today = new Date();\
+    let present_year= today.getFullYear();\
+    let birth_Year=birthdate.getFullYear()\
+    let ananya = present_year - birth_Year;\
+    let month_Diff = today.getMonth() - birthdate.getMonth();\
+\
+    if ((today.getDate() < birthdate.getDate()) || month_Diff < 0)\
+    \{	        \
+	ananya\'97;\
+    \}\
+    if (ananya < 18 || ananya > 55)\
+    \{\
+	hbc.setCustomValidity("Age must be between 18 and 55");\
+        	hbc.reportValidity();\
+    \}\
+    else\
+    \{\
+    	    hbc.setCustomValidity("");\
+    \}\
+  \}\
+);\
+const sreenidhi = (runanya) =>\
+\{\
+    runanya.preventDefault();\
+    const himakar = document.getElementById('name').value\
+    const bhavana = document.getElementById('email').value\
+    const chappidi = document.getElementById('password').value\
+    const ananya = document.getElementById('dob').value\
+    const runanya = document.getElementById('terms').checked\
+    const input = \
+    \{\
+        himakar, bhavana, chappidi, ananya, runanya\
+    \};\
+    l = R();\
+    l.push(input);\
+    localStorage.setItem(\'93l\'94, JSON.stringify(l));\
+    D();\
+    userForm.reset();\
+    \}\
+\
+\
+userForm.addEventListener('submit', sreenidhi)\
+D();}
