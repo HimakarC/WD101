@@ -1,66 +1,69 @@
-let userForm=document.getElementById('user');
-let arr=[];
-const ret=()=>{
-    let entry=JSON.parse(localStorage.getItem('arr'))||[];
+let userForm = document.getElementById('user');
+let l = [];
+const R = () => 
+{
+    let entry = JSON.parse(localStorage.getItem('l')) || [];
     return entry;
 }
 
-const dis=()=>{
-    let entry=ret();
-    const tE=entry.map((input)=>{
-        const namedata=`<td class='th'>${input.FullName}</td>`;
-        const emaildata=`<td class='th'>${input.email}</td>`;
-        const passworddata=`<td class='th'>${input.password}</td>`;
-        const dobdata=`<td class='th'>${input.dob}</td>`;
-        const termsdata=`<td class='th'>${input.terms}</td>`;
-        const row=`<tr>${namedata} ${emaildata} ${passworddata} ${dobdata} ${termsdata}</tr>`;
+const display = () =>
+{
+    let entry = R();
+    const TE = entry.map((input) =>
+    {
+        const himakar = `<td class='th'>${input.FullName}</td>`;
+        const bhavana = `<td class='th'>${input.email}</td>`;
+        const chappidi = `<td class='th'>${input.password}</td>`;
+        const ananya = `<td class='th'>${input.dob}</td>`;
+        const td = `<td class='th'>${input.terms}</td>`;
+        const row = `<tr>${himakar} ${bhavana} ${chappidi} ${ananya} ${td}</tr>`;
         return row;
     }).join('\n');
-    const tabBody=document.querySelector('#user-table tbody');
-    tabBody.innerHTML=tE;
+    const TB = document.querySelector('#user-table tbody');
+    TB.innerHTML = TE;
 }
-const abc = document.getElementById("dob");
-abc.addEventListener("change", () =>
+const hbc = document.getElementById("dob");
+hbc.addEventListener("change", () =>
 {
-    let k=abc.value.split("-");
-    let birthdate = new Date(k[0],k[1],k[2]);
-    let today = new Date();
-    let present_year= today.getFullYear();
-    let birth_Year=birthdate.getFullYear()
-    let age = present_year - birth_Year;
-    let month_Diff = today.getMonth() - birthdate.getMonth();
+    let L = hbc.value.split("-");
+    let BD = new Date(L[0], L[1], L[2]);
+    let T = new Date();
+    let PY= T.getFullYear();
+    let BY = BD.getFullYear()
+    let ananya = PY - BY;
+    let MD = T.getMonth() - BD.getMonth();
 
-    if ((today.getDate() < birthdate.getDate())||month_Diff<0) 
+    if ((T.getDate() < BD.getDate()) || MD < 0) 
         {
-        age--;
+        ananya--;
         }
-    if (age<18 || age>55) 
+    if (ananya < 18 || ananya > 55) 
+    {
+        hbc.setCustomValidity("Age must be between 18 and 55");
+        hbc.reportValidity();
+    }
+  else
         {
-        abc.setCustomValidity("Age must be between 18 and 55");
-        abc.reportValidity();
-    }else
-        {
-        abc.setCustomValidity("");
+        hbc.setCustomValidity("");
         }
     }
 );
-const suf=(event)=>{
+const sreenidhi = (event) =>
+{
     event.preventDefault();
     const FullName = document.getElementById('name').value
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
     const dob = document.getElementById('dob').value
     const terms = document.getElementById('terms').checked
-    const input={
-        FullName,email,password,dob,terms
+    const input = {
+        FullName, email, password, dob, terms
     };
-    arr=ret();
-    arr.push(input);
-    localStorage.setItem("arr",JSON.stringify(arr));
-    dis();
+    l = R();
+    l.push(input);
+    localStorage.setItem("l", JSON.stringify(l));
+    display();
     userForm.reset();
     }
-
-
-userForm.addEventListener('submit',suf)
-dis();
+userForm.addEventListener('submit', sreenidhi)
+display();
